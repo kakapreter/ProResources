@@ -21,8 +21,8 @@ spring.datasource.password=your_password
 #配置Druid连接池
 spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
 
-#Mybatis日志xx.xx.xx.mapper.*为映射的接口
-logging.level.xx.xx.xx.mapper.*=debug
+#Mybatis日志xx.xx.mapper.*为映射的接口
+logging.level.xx.xx.mapper.*=debug
 
 #配置xml的路径---resources目录下的mappers文件夹
 mybatis.mapper-locations=classpath:mappers/*.xml
