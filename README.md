@@ -30,7 +30,7 @@ mybatis.mapper-locations=classpath:mappers/*.xml
 mybatis.configuration.map-underscore-to-camel-case=true
 ```
 
-# SpringBoot-Web项目必须引入的两个jar包
+# SpringBoot-Web项目必引jar包
 
 | maven地址                                                    | artifactId(jar包)        | jar包作用 |
 | ------------------------------------------------------------ | ------------------------ | --------- |
