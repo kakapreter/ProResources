@@ -90,6 +90,7 @@ mybatis.configuration.map-underscore-to-camel-case=true
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>3.0.2</spring-boot.version>
     </properties>
+
     <dependencies>
         
         <dependency>
@@ -104,6 +105,7 @@ mybatis.configuration.map-underscore-to-camel-case=true
         </dependency>
         
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
