@@ -65,7 +65,7 @@ mybatis.configuration.map-underscore-to-camel-case=true
 >
 >### 单元测试依赖
 > 
->5.Spring Test与JUnit等其他测试框架结合起来，提供了便捷高效的测试手段。而Spring Boot Test 是在Spring Test之上的再次封装，增加了切片测试，增强了mock能力。
+>5.spring-boot-starter-test包含junit-jupiter
 > 
 > spring-boot-starter-test
 >
