@@ -1,9 +1,3 @@
-# 单元测试
-
-|                          maven地址                           | artifactId(jar包) | jar包作用        |
-| :----------------------------------------------------------: | ----------------- | ---------------- |
-| https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api | junit-jupiter-api | 单元测试(新版本) |
-|        https://mvnrepository.com/artifact/junit/junit        | junit             | 单元测试         |
 
 # 数据库
 
@@ -66,6 +60,11 @@ mybatis.configuration.map-underscore-to-camel-case=true
 > ​	|-spring-boot-starter-tomcat
 >
 > 所以我们只需要引入web组件即可:
+>
+>### 单元测试
+> spring-boot-starter-test
+>        |-junit-jupiter
+> 所以我们只需要引入test组件即可:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
