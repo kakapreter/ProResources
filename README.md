@@ -261,10 +261,14 @@ public class XxxApplication {
 #### spring-boot-devtools的yml配置
 ```yml
 spring:
+  
   devtools:
     restart:
+      #热部署生效
       enabled: true
+      #设置重启目录
       additional-paths: src/main/java
+      #设置静态文件目录
       exclude: static/**
 ```
 
