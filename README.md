@@ -6,7 +6,7 @@
 | https://mvnrepository.com/artifact/mysql/mysql-connector-java | mysql-connector-java      | java数据库驱动(官方)    |
 |     https://mvnrepository.com/artifact/com.alibaba/druid     | druid                     | druid数据库连接池 |
 | https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter | mybatis-plus-boot-starter | mybatis-plus      |
-|    https://mvnrepository.com/artifact/org.mybatis/mybatis    | mybatis                   | mybatis           |
+|    https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter    | mybatis                   | mybatis           |
 
 ### properties与yml配置文件任选其一
 
