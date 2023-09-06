@@ -109,6 +109,7 @@ public class DruidTest {
     }
 }
 ```
+#### XxxApplication --SpringBoot启动类模板
 ```java
 package xxx.xxx.xxx;
 
