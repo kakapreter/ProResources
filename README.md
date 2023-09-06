@@ -32,28 +32,46 @@ mybatis.configuration.map-underscore-to-camel-case=true
 
 #### application.yml文件--mybatis配置及druid连接池配置
 ```yml
-# 应用服务 WEB 访问端口
+# 应用服务WEB访问端口
 server:
   port: 8080
-# 配置xml的路径---resources目录下的mappers文件夹
-mybatis:
-  mapper-locations: classpath:mappers/*.xml
+
 # 数据库连接配置
 spring:
-  # dev为开发环境
-  profiles:
-    active: dev
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/your_database?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: your_username
     password: your_password
-# 日志配置
+
+#配置xml的路径---resources目录下的mappers文件夹
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+
+#Mybatis日志xx.xx.mapper.*为映射的接口
 logging:
   level:
     xxx:
       xxx:
         xxx: debug
+---
+spring:
+  # dev开发环境配置
+  profiles:
+    #激活开发环境
+    active: dev
+---
+#开发环境配置
+spring:
+  profiles: dev
+server:
+  port: 8080
+---
+#生产环境配置
+spring:
+  profiles: pro
+server:
+  port: 8082
 ```
 #### 测试Druid连接池配置
 ```java
