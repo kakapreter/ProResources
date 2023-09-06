@@ -73,6 +73,7 @@ mybatis.configuration.map-underscore-to-camel-case=true
 > 
 > 所以我们只需要引入test组件即可:
 >
+https://start.aliyun.com
 #### aliyun基本pom.xml配置
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
