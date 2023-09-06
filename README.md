@@ -10,7 +10,7 @@
 
 
 
-#### application.properties文件--mybatis配置
+#### application.properties文件--mybatis配置及druid连接池配置
 
 ```properties
 #数据库连接配置
@@ -28,6 +28,33 @@ logging.level.xx.xx.mapper.*=debug
 mybatis.mapper-locations=classpath:mappers/*.xml
 #mybatis需要手动开启驼峰命名支持,mybatis-plus默认是开启的
 mybatis.configuration.map-underscore-to-camel-case=true
+```
+#### 测试Druid连接池配置
+```java
+package xxx.xxx.xxx;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
+@SpringBootTest
+public class DruidTest {
+    @Autowired
+    DataSource dataSource;
+    @Test
+    public void druidTest() throws SQLException {
+        //查看默认数据源
+        System.out.println(dataSource.getClass());
+        //获得数据库连接
+        Connection connection = dataSource.getConnection();
+        System.out.println(connection);
+        //close
+        connection.close();
+    }
+}
 ```
 
 # SpringBoot-Web项目必引jar包
