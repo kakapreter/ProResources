@@ -272,4 +272,4 @@ spring:
       exclude: static/**
 ```
 #### 第二步:调 Settings 
-![](https://pic.imgdb.cn/item/64f90ff3661c6c8e54281472.png)
+![](https://pic.imgdb.cn/item/64f91121661c6c8e54282d08.png)
