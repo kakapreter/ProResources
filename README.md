@@ -1,10 +1,10 @@
 # 一般Spring Boot项目目录结构
 project_name
->  |-.idea
+> |-.idea
 > 
->  |-src
+> |-src
 > 
->     |-main
+> |-main
 > 
 >     |-xxx
 > 
