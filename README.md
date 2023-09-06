@@ -143,7 +143,7 @@ public class XxxApplication {
 >
 > ​	|-spring-boot-starter
 >
-> ​		|-spring-boot-starter-logging
+> ​		  |-spring-boot-starter-logging
 >
 > 所以我们只需要引入web组件即可:
 >
