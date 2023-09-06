@@ -260,7 +260,7 @@ public class XxxApplication {
 
 #### spring-boot-devtools的yml配置
 ```yml
-  spring:
+spring:
   devtools:
     restart:
       enabled: true
