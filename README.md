@@ -141,7 +141,7 @@ public class XxxApplication {
 >
 > spring-boot-starter-web 
 >
-> ​	|-spring-boot-starter,spring-boot-starter 
+> ​	|-spring-boot-starter
 >
 > ​		|-spring-boot-starter-logging
 >
