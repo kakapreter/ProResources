@@ -40,6 +40,7 @@ mybatis:
   mapper-locations: classpath:mappers/*.xml
 # 数据库连接配置
 spring:
+  # dev为开发环境
   profiles:
     active: dev
   datasource:
