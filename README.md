@@ -10,7 +10,7 @@
 
 
 
-#### application.properties文件
+#### application.properties文件--mybatis配置
 
 ```properties
 #数据库连接配置
