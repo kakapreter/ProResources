@@ -253,7 +253,7 @@ public class XxxApplication {
 | maven地址                                                   | artifactId(jar包) | jar包作用 |
 | ----------------------------------------------------------- | ----------------- | --------- |
 | https://mvnrepository.com/artifact/org.projectlombok/lombok | lombok            | 1         |
-|                                                             |                   |           |
+| https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools    |spring-boot-devtools     |   web项目热部署        |
 
 > 1.简化实体类的书写,只需在实体类上添加@Data,就省略了setter,getter,toString方法,有参和无参构造方法还是需要写的
 
