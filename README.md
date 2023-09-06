@@ -6,13 +6,13 @@ project_name
 > 
 > |-main
 > 
->     |-xxx
+>   |-xxx
 > 
->       |-xxx
+>   |-xxx
 > 
->         |-xxx
+>   |-xxx
 > 
->           |-common
+>     |-common
 > 
 >           |-config
 > 
