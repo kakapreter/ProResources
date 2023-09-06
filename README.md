@@ -13,18 +13,18 @@
 #### application.properties文件--mybatis配置及druid连接池配置
 
 ```properties
-#数据库连接配置
+# 数据库连接配置
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/your_database?useSSL=false&serverTimeZone=Asia/Shanghai
 spring.datasource.username=your_username
 spring.datasource.password=your_password
-#配置Druid连接池
+# 配置Druid连接池
 spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
 
-#Mybatis日志xx.xx.mapper.*为映射的接口
+# Mybatis日志xx.xx.mapper.*为映射的接口
 logging.level.xx.xx.mapper.*=debug
 
-#配置xml的路径---resources目录下的mappers文件夹
+# 配置xml的路径---resources目录下的mappers文件夹
 mybatis.mapper-locations=classpath:mappers/*.xml
 #mybatis需要手动开启驼峰命名支持,mybatis-plus默认是开启的
 mybatis.configuration.map-underscore-to-camel-case=true
@@ -33,6 +33,7 @@ mybatis.configuration.map-underscore-to-camel-case=true
 #### application.yml文件--mybatis配置及druid连接池配置
 ```yml
 ---
+# 开发环境
 server:
   port: 8080
 spring:
@@ -40,6 +41,7 @@ spring:
     activate:
       on-profile: dev
 ---
+# 生产环境
 server:
   port: 8081
 spring:
@@ -47,6 +49,7 @@ spring:
     activate:
       on-profile: pro
 ---
+# 测试环境
 server:
   port: 8082
 spring:
@@ -62,6 +65,7 @@ spring:
 spring:
   # 数据库连接配置
   datasource:
+    # 配置Druid连接池
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/your_database?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: your_username
