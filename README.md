@@ -241,4 +241,12 @@ public class XxxApplication {
 </project>
 
 ```
+# 推荐
+| maven地址                                                   | artifactId(jar包) | jar包作用 |
+| ----------------------------------------------------------- | ----------------- | --------- |
+| https://mvnrepository.com/artifact/org.projectlombok/lombok | lombok            | 1         |
+|                                                             |                   |           |
+
+> 1.简化实体类的书写
+
 
