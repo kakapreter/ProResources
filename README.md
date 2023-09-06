@@ -1,5 +1,5 @@
 
-# 数据库
+# 数据库jar包
 
 |                          maven地址                           | artifactId(jar包)         | jar包作用         |
 | :----------------------------------------------------------: | ------------------------- | ----------------- |
@@ -241,7 +241,7 @@ public class XxxApplication {
 </project>
 
 ```
-# 推荐
+# 推荐jar包
 | maven地址                                                   | artifactId(jar包) | jar包作用 |
 | ----------------------------------------------------------- | ----------------- | --------- |
 | https://mvnrepository.com/artifact/org.projectlombok/lombok | lombok            | 1         |
