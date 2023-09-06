@@ -76,7 +76,7 @@ mybatis.configuration.map-underscore-to-camel-case=true
 
 #### Cloud Native App Initializer https://start.spring.io , https://start.aliyun.com
 
-#### 以下是aliyun基本pom.xml配置
+#### 以下是aliyun的SpringBoot 3.0.2基本pom.xml配置
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
