@@ -107,7 +107,7 @@ public class XxxApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(XxxApplication.class, args);
         Environment environment = context.getBean(Environment.class);
-        System.out.println("当前测试环境为: " + environment.getProperty( "spring.profiles.active") + " 占用端口为: "+environment.getProperty("local.server.port"));
+        System.out.println("当前测试环境为: " + environment.getProperty( "spring.profiles.active") + " 占用端口为: "+environment.getProperty("local.server.port")+"login.html");
         System.out.println("Web首页访问链接为：http://localhost:" + environment.getProperty("local.server.port"));
     }
 }
