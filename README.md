@@ -113,7 +113,7 @@ public class XxxApplication {
 }
 ```
 
-#### xml文件通用模板
+#### Mybatis框架Xml文件通用模板
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
