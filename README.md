@@ -9,7 +9,7 @@
 | https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter | mybatis-plus-boot-starter | mybatis-plus      |
 |    https://mvnrepository.com/artifact/org.mybatis/mybatis    | mybatis                   | mybatis           |
 
-
+### properties与yml配置文件任选其一
 
 #### application.properties文件--mybatis配置及druid连接池配置
 
@@ -30,6 +30,7 @@ mybatis.mapper-locations=classpath:mappers/*.xml
 #mybatis需要手动开启驼峰命名支持,mybatis-plus默认是开启的
 mybatis.configuration.map-underscore-to-camel-case=true
 ```
+
 
 #### application.yml文件--mybatis配置及druid连接池配置
 ```yml
