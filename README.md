@@ -33,56 +33,39 @@ mybatis.configuration.map-underscore-to-camel-case=true
 
 #### application.yml文件--mybatis配置及druid连接池配置
 ```yml
----
-# 开发环境
+# 应用服务器(Tomcat)WEB端口号
+# yml结构 相当于properties文件中的server.port=8080
 server:
   port: 8080
-spring:
-  config:
-    activate:
-      on-profile: dev
----
-# 生产环境
-server:
-  port: 8081
-spring:
-  config:
-    activate:
-      on-profile: pro
----
-# 测试环境
-server:
-  port: 8082
-spring:
-  config:
-    activate:
-      on-profile: test
----
-spring:
-  profiles:
-    active: dev
----
 
-spring:
-  # 数据库连接配置
-  datasource:
-    # 配置Druid连接池
-    type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/your_database?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
-    username: your_username
-    password: your_password
-
-# 配置xml的路径---resources目录下的mappers文件夹
+# 加载MyBatis配置文件
 mybatis:
   mapper-locations: classpath:mappers/*.xml
 
-# 日志配置
+# 加载当前的开发环境配置
+spring:
+  profiles:
+    active: dev
+```
+#### application-dev.yml文件--mybatis配置及druid连接池配置
+```yml
+# 数据库连接配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/your_database?useSSL=false&serverTimeZone=Asia/Shanghai
+    username: your_username
+    password: your_password
+
+#mybatis日志
 logging:
   level:
     xxx:
       xxx:
         xxx: debug
 ```
+
 #### 测试Druid连接池配置
 ```java
 package xxx.xxx.xxx;
