@@ -29,6 +29,31 @@ mybatis.mapper-locations=classpath:mappers/*.xml
 #mybatis需要手动开启驼峰命名支持,mybatis-plus默认是开启的
 mybatis.configuration.map-underscore-to-camel-case=true
 ```
+
+#### application.yml文件--mybatis配置及druid连接池配置
+```yml
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+# 配置xml的路径---resources目录下的mappers文件夹
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+# 数据库连接配置
+spring:
+  profiles:
+    active: dev
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/your_database?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: your_username
+    password: your_password
+# 日志配置
+logging:
+  level:
+    xxx:
+      xxx:
+        xxx: debug
+```
 #### 测试Druid连接池配置
 ```java
 package xxx.xxx.xxx;
@@ -56,6 +81,7 @@ public class DruidTest {
     }
 }
 ```
+
 
 # SpringBoot-Web项目必引jar包
 
