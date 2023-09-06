@@ -1,33 +1,33 @@
 # 一般Spring Boot项目目录结构
 project_name
 
-  |-.idea
+>  |-.idea
   
-  |-src
+>  |-src
   
-     |-main
+>    |-main
      
-       |-xxx
+>       |-xxx
        
-         |-xxx
+>         |-xxx
          
-           |-xxx
+>          |-xxx
            
-             |-common
+>             |-common
              
-             |-config
+>             |-config
              
-             |-controller
+>             |-controller
              
-             |-entity
+>             |-entity
              
-             |-mapper
+>             |-mapper
              
-                |-impl
+>                |-impl
                 
-             |-service
+>             |-service
              
-                |-impl
+>                |-impl
 # 数据库jar包
 
 |                          maven地址                           | artifactId(jar包)         | jar包作用         |
