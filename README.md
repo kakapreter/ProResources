@@ -247,6 +247,6 @@ public class XxxApplication {
 | https://mvnrepository.com/artifact/org.projectlombok/lombok | lombok            | 1         |
 |                                                             |                   |           |
 
-> 1.简化实体类的书写
+> 1.简化实体类的书写,只需在实体类上添加@Data,就省略了setter,getter,toString方法的书写
 
 
