@@ -111,8 +111,16 @@ public class XxxApplication {
         System.out.println("Web首页访问链接为：http://localhost:" + environment.getProperty("local.server.port"));
     }
 }
+```
 
-
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xxx.xxx.xxx.mapper.xxxMapper">
+  
+</mapper>
 ```
 
 # SpringBoot-Web项目必引jar包
