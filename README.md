@@ -58,7 +58,7 @@ spring:
     url: jdbc:mysql://localhost:3306/your_database?useSSL=false&serverTimeZone=Asia/Shanghai
     username: your_username
     password: your_password
-# 文件上传配置
+# 文件上传配置默认为1MB
   servlet:
     multipart:
       max-file-size: 10MB
