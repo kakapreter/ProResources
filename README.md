@@ -73,6 +73,7 @@ mybatis-plus:
 mybatis:
   mapper-locations: classpath:mappers/*.xml
   configuration:
+    # 开启驼峰命名支持
     map-underscore-to-camel-case: true
   
 
