@@ -258,10 +258,9 @@ public class XxxApplication {
 > 1.简化实体类的书写,只需在实体类上添加@Data,就省略了setter,getter,toString方法,有参和无参构造方法还是需要写的
 >
 ### 开发热环境部署
-#### 第一步:spring-boot-devtools的yml配置
+#### 第一步:添加spring-boot-devtools的依赖及spring-boot-devtools的yml配置
 ```yml
 spring:
-  
   devtools:
     restart:
       #热部署生效
