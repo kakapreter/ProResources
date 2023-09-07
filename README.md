@@ -220,7 +220,7 @@ public class XxxApplication {
         Environment environment = context.getBean(Environment.class);
         System.out.println("当前测试环境为: " + environment.getProperty( "spring.profiles.active") + " 占用端口为: "+environment.getProperty("local.server.port"));
         System.out.println("Web首页访问链接为：http://localhost:" + environment.getProperty("local.server.port")+"/login.html");
-        System.out.println("Swagger接口网址为:http://localhost:8080/swagger-ui/index.html#/");
+        System.out.println("Swagger2接口测试网址为:http://localhost:8080/swagger-ui/index.html#/");
     }
 }
 ```
