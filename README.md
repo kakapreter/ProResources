@@ -64,19 +64,19 @@ spring:
     multipart:
       max-file-size: 10MB
 
-#指定mybatis-plus的日志输出格式
+# mybatis-plus配置
 mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-# 加载MyBatis配置文件
+# mybatis配置
 mybatis:
   mapper-locations: classpath:mappers/*.xml
   configuration:
     # 开启驼峰命名支持
     map-underscore-to-camel-case: true
   
-
 #mybatis日志
 logging:
   level:
