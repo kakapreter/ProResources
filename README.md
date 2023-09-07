@@ -187,6 +187,8 @@ public class XxxApplication {
 
 #### Cloud Native App Initializer https://start.spring.io , https://start.aliyun.com
 
+> 注意SpringBoot3.0.2的支持的mybatis-plus-boot-starter最低版本为3.5.3
+
 #### 以下是aliyun的SpringBoot 3.0.2基本pom.xml配置
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
