@@ -259,6 +259,7 @@ public class XxxApplication {
 >
 ### 开发热环境部署
 #### 第一步:添加spring-boot-devtools的依赖及spring-boot-devtools的yml配置
+##### 在pom.xml中添加
 ```xml
        <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -266,6 +267,7 @@ public class XxxApplication {
             <optional>true</optional>
         </dependency>
 ```
+##### 在application.yml中添加
 ```yml
 spring:
   devtools:
