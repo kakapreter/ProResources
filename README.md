@@ -49,14 +49,19 @@ spring:
 ```
 #### application-dev.yml文件--mybatis配置及druid连接池配置
 ```yml
-# 数据库连接配置
+
 spring:
+  # 数据库连接配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/your_database?useSSL=false&serverTimeZone=Asia/Shanghai
     username: your_username
     password: your_password
+# 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
 
 #mybatis日志
 logging:
