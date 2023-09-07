@@ -170,7 +170,7 @@ public class SwaggerConfig {
 
 ```
 #### aliyun的SpringBoot 3.0.2 Swagger2的jar包依赖
-```pom
+```xml
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
