@@ -134,7 +134,7 @@ public class MybatisPlusConfig {
 }
 ```
 #------------------------------------------------------------------------------------------------
-#### Swagger2通用配置模板类
+#### Swagger2通用配置模板类------Swagger2是能够以REST风格方式在本地网页测试接口的工具
 ```java
 package xxx.xxx.xxx.config;
 
