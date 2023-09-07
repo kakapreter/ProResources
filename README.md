@@ -133,7 +133,7 @@ public class MybatisPlusConfig {
     }
 }
 ```
-#----------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------
 #### Swagger2通用配置模板类
 ```java
 package xxx.xxx.xxx.config;
@@ -169,8 +169,36 @@ public class SwaggerConfig {
 }
 
 ```
+#### aliyun的SpringBoot 3.0.2 Swagger2的jar包依赖
+```pom
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+```
+#### Swagger的yml配置
+```yml
+spring:
+  # swagger-ui custom path
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+```
 
-#----------------------------------------------------------------------------------------
+### Swagger默认的访问路径http://localhost:8080/swagger-ui/index.html#/
+#------------------------------------------------------------------------------------------------
 #### 测试Druid连接池配置
 ```java
 package xxx.xxx.xxx;
