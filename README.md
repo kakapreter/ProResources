@@ -80,7 +80,32 @@ logging:
       xxx:
         xxx: debug
 ```
+#### Mybatis-plus分页查询通用配置模板类
+```java
+package xxx.xxx.xxx.config;
 
+import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MybatisPlusConfig {
+    @Bean
+    public MybatisPlusInterceptor paginationInterceptor(){
+        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        /**
+         * DbType
+         *
+         */
+        PaginationInnerInterceptor paginationInnerInterceptor = new PaginationInnerInterceptor(DbType.MYSQL);
+        interceptor.addInnerInterceptor(paginationInnerInterceptor);
+        return interceptor;
+    }
+}
+
+```
 #### 测试Druid连接池配置
 ```java
 package xxx.xxx.xxx;
