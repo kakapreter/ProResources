@@ -237,7 +237,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
 @SpringBootApplication
-@MapperScan("xxx.xxx.xxx.Mapper")
+@MapperScan("xxx.xxx.xxx.mapper")
 public class XxxApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(XxxApplication.class, args);
