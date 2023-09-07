@@ -99,8 +99,7 @@ public class MybatisPlusConfig {
          * DbType.XXX
          * XXX 为具体的数据库类型如MYSQL,ORACLE
          */
-        PaginationInnerInterceptor paginationInnerInterceptor = new PaginationInnerInterceptor(DbType.MYSQL);
-        interceptor.addInnerInterceptor(paginationInnerInterceptor);
+        interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
         return interceptor;
     }
 }
