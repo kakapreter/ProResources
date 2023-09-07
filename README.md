@@ -72,6 +72,9 @@ mybatis-plus:
 # 加载MyBatis配置文件
 mybatis:
   mapper-locations: classpath:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  
 
 #mybatis日志
 logging:
