@@ -21,13 +21,17 @@ spring.datasource.password=your_password
 # 配置Druid连接池
 spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
 
-# Mybatis日志xx.xx.mapper.*为映射的接口
-logging.level.xx.xx.mapper.*=debug
-
 # 配置xml的路径---resources目录下的mappers文件夹
 mybatis.mapper-locations=classpath:mappers/*.xml
 #mybatis需要手动开启驼峰命名支持,mybatis-plus默认是开启的
 mybatis.configuration.map-underscore-to-camel-case=true
+
+# Mybatis日志xx.xx.mapper.*为映射的接口
+logging.level.xx.xx.mapper.*=debug
+
+#指定mybatis-plus的日志输出格式
+mybatis-plus.configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
 ```
 
 
