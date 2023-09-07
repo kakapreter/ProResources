@@ -38,10 +38,6 @@ mybatis.configuration.map-underscore-to-camel-case=true
 server:
   port: 8080
 
-# 加载MyBatis配置文件
-mybatis:
-  mapper-locations: classpath:mappers/*.xml
-
 # 加载当前的开发环境配置
 spring:
   profiles:
@@ -62,6 +58,15 @@ spring:
   servlet:
     multipart:
       max-file-size: 10MB
+
+#指定mybatis-plus的日志输出格式
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 加载MyBatis配置文件
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
 
 #mybatis日志
 logging:
