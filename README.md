@@ -47,7 +47,7 @@ spring:
   profiles:
     active: dev
 ```
-> 在实际使用中可以选择mybatis或mybatis-plus,注意只能选一个框架使用,不过mybatis-plus默认集成mybatis,换句话说,引入mybatis-plus依赖后,mybatis照常能用
+> 在实际使用中合理结合,不过mybatis-plus默认集成mybatis,换句话说,引入mybatis-plus依赖后,mybatis照常能用,建议配置都加进来
 #### application-dev.yml文件--mybatis配置及druid连接池配置
 ```yml
 
