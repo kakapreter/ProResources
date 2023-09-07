@@ -132,6 +132,8 @@ public class MybatisPlusConfig {
         return interceptor;
     }
 }
+```
+
 #### Swagger2通用配置模板类
 ```java
 package xxx.xxx.xxx.config;
@@ -165,8 +167,6 @@ public class SwaggerConfig {
                 .build();
     }
 }
-
-```
 
 ```
 #### 测试Druid连接池配置
