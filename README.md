@@ -442,7 +442,6 @@ public class R {
         return r;
     }
     /**
-     *
      * @param rCodeEnum
      * @return
      */
@@ -497,6 +496,7 @@ public enum RCodeEnum {
     private Integer code;
     private String message;
     private Object data;
+
     private RCodeEnum(Boolean success, Integer code, String message) {
         this.success = success;
         this.code = code;
