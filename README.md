@@ -410,6 +410,7 @@ public class Result<T> {
 ```
 ```java
 package xxx.xxx.xxx.entity.common;
+
 public enum ResultEnum {
     //这里是可以自己定义的，方便与前端交互即可
     UNKNOWN_ERROR(-1,"未知错误"),
@@ -449,7 +450,6 @@ public class ResultUtil {
     }
     /**成功但不带数据**/
     public static Result success(){
-
         return success(null);
     }
     /**失败**/
