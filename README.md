@@ -355,8 +355,9 @@ public class XxxApplication {
 | https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools    |spring-boot-devtools     |   web项目热部署       |
 
 > 1.简化实体类的书写,只需在实体类上添加@Data,就省略了setter,getter,toString方法,有参和无参构造方法还是需要写的
+
 > lombok还支持@Slf4j调试工具
-> 
+
 ### 开发热环境部署
 #### 第一步:添加spring-boot-devtools的依赖及spring-boot-devtools的yml配置
 ##### 在pom.xml中添加
