@@ -389,7 +389,7 @@ spring:
 
 # 常用的分层设计
 #### 通用R类,RCodeEnum类设计,这里默认使用了lombok
-
+#### 加入依赖库
 ```xml
         <dependency>
             <groupId>io.swagger</groupId>
@@ -397,6 +397,7 @@ spring:
             <version>1.5.22</version>
         </dependency>
 ```
+#### R类
 ```java
 package xxx.xxx.xxx.entity.common;
 
@@ -474,10 +475,9 @@ public class R {
     }
 
 }
-
-
-
 ```
+
+#### RCodeEnum类
 ```java
 package xxx.xxx.xxx.entity.common;
 import lombok.Getter;
