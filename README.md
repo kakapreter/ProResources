@@ -387,7 +387,8 @@ spring:
 > 旧版本的idea第二个图的配置如下
 > 按 Ctrl + Shift + Alt + / 快捷键调出Maintenance页面,单击Registry,勾选compiler.automake.allow.wen.app.running复选框
 
-# 常用的分层设计
+# 常用设计
+### 对于前端与后端的数据交互通用类的设计
 #### 通用R类,RCodeEnum类设计,这里默认使用了lombok
 #### 加入依赖库
 ```xml
