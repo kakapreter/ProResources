@@ -388,78 +388,121 @@ spring:
 > 按 Ctrl + Shift + Alt + / 快捷键调出Maintenance页面,单击Registry,勾选compiler.automake.allow.wen.app.running复选框
 
 # 常用的分层设计
-#### 通用Result类,ResultEnum类,ResultUtil类的设计,ResultEnum类内容可以根据项目自定义,这里默认使用了lombok
+#### 通用R类,RCodeEnum类设计,这里默认使用了lombok
+
+```xml
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.22</version>
+        </dependency>
+```
 ```java
 package xxx.xxx.xxx.entity.common;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-
+//设置统一资源返回结果集
 @Data
-public class Result<T> {
-    private Integer code;
-    private String msg;
-    private T data;
-    public Result() {
+@ApiModel(value = "全局统一返回结果")
+public class R {
+    @ApiModelProperty(value = "返回码")
+    private  Integer code;
+    @ApiModelProperty(value = "返回消息")
+    private  String message;
+    @ApiModelProperty(value = "是否成功")
+    private  Boolean success;
+    @ApiModelProperty(value = "返回数据")
+    private Object data;
+    private R() {}
+    //返回成功的结果集
+    public static R success(){
+        R r = new R();
+        r.setSuccess(RCodeEnum.SUCCESS.isSuccess());
+        r.setCode(RCodeEnum.SUCCESS.getCode());
+        r.setMessage(RCodeEnum.SUCCESS.getMessage());
+        return r;
     }
-    public Result(Integer code, String msg, T data) {
-        this.code = code;
-        this.msg = msg;
+    //返回带参的成功结果集
+    public static R success(Object data) {
+        R r = new R();
+        r.setSuccess(RCodeEnum.SUCCESS.isSuccess());
+        r.setCode(RCodeEnum.SUCCESS.getCode());
+        r.setMessage(RCodeEnum.SUCCESS.getMessage());
+        r.setData(data);
+        return r;
+    }
+    //返回失败的结果集
+    public static R error(){
+        R r = new R();
+        r.setSuccess(RCodeEnum.UNKNOWN_REASON.isSuccess());
+        r.setCode(RCodeEnum.UNKNOWN_REASON.getCode());
+        r.setMessage(RCodeEnum.UNKNOWN_REASON.getMessage());
+        return r;
+    }
+    /**
+     *
+     * @param rCodeEnum
+     * @return
+     */
+    public static R setResult(RCodeEnum rCodeEnum){
+        R r = new R();
+        r.setSuccess(rCodeEnum.isSuccess());
+        r.setCode(rCodeEnum.getCode());
+        r.setMessage(rCodeEnum.getMessage());
+        return r;
+    }
+
+    public R success(Boolean success){
+        this.setSuccess(success);
+        return this;
+    }
+
+    public R message(String message){
+        this.setMessage(message);
+        return this;
+    }
+
+    public R code(Integer code){
+        this.setCode(code);
+        return this;
+    }
+    public R data(Object data) {
         this.data = data;
+        return this;
+
     }
+
 }
+
+
+
 ```
 ```java
 package xxx.xxx.xxx.entity.common;
+import lombok.Getter;
 
-public enum ResultEnum {
-    //这里是可以自己定义的，方便与前端交互即可
-    UNKNOWN_ERROR(-1,"未知错误"),
-    SUCCESS(10000,"成功"),
-    USER_NOT_EXIST(1,"用户不存在"),
-    USER_IS_EXISTS(2,"用户已存在"),
-    DATA_IS_NULL(3,"数据为空"),
-    ;
+@Getter
+public enum RCodeEnum {
+    SUCCESS(true, 20000, "成功"),
+    UNKNOWN_REASON(false, 20001, "未知错误"),
+    BAD_SQL_GRAMMAR(false, 21001, "sql语法错误"),
+    JSON_PARSE_ERROR(false, 21002, "json解析异常"),
+    PARAM_ERROR(false, 21003, "参数不正确"),
+    FILE_UPLOAD_ERROR(false, 21004, "文件上传错误"),
+    EXCEL_DATA_IMPORT_ERROR(false, 21005, "Excel数据导入错误");
+
+    private boolean success;
     private Integer code;
-    private String msg;
-
-    ResultEnum(Integer code, String msg) {
+    private String message;
+    private Object data;
+    private RCodeEnum(Boolean success, Integer code, String message) {
+        this.success = success;
         this.code = code;
-        this.msg = msg;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getMsg() {
-        return msg;
+        this.message = message;
     }
 }
-```
-```java
-package xxx.xxx.xxx.entity.common;
 
-public class ResultUtil {
-    /**成功且带数据**/
-    public static Result success(Object object){
-        Result result = new Result();
-        result.setCode(ResultEnum.SUCCESS.getCode());
-        result.setMsg(ResultEnum.SUCCESS.getMsg());
-        result.setData(object);
-        return result;
-    }
-    /**成功但不带数据**/
-    public static Result success(){
-        return success(null);
-    }
-    /**失败**/
-    public static Result error(Integer code,String msg){
-        Result result = new Result();
-        result.setCode(code);
-        result.setMsg(msg);
-        return result;
-    }
-
-}
 ```
 
