@@ -386,3 +386,80 @@ spring:
 ![](https://pic.imgdb.cn/item/64f91519661c6c8e542a0ca9.png)
 > 旧版本的idea第二个图的配置如下
 > 按 Ctrl + Shift + Alt + / 快捷键调出Maintenance页面,单击Registry,勾选compiler.automake.allow.wen.app.running复选框
+
+# 常用的分层设计
+#### 通用Result类,ResultEnum类,ResultUtil类的设计,ResultEnum类内容可以根据项目自定义,这里默认使用了lombok
+```java
+package xxx.xxx.xxx.entity.common;
+
+import lombok.Data;
+
+@Data
+public class Result<T> {
+    private Integer code;
+    private String msg;
+    private T data;
+    public Result() {
+    }
+    public Result(Integer code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+}
+```
+```java
+package xxx.xxx.xxx.entity.common;
+public enum ResultEnum {
+    //这里是可以自己定义的，方便与前端交互即可
+    UNKNOWN_ERROR(-1,"未知错误"),
+    SUCCESS(10000,"成功"),
+    USER_NOT_EXIST(1,"用户不存在"),
+    USER_IS_EXISTS(2,"用户已存在"),
+    DATA_IS_NULL(3,"数据为空"),
+    ;
+    private Integer code;
+    private String msg;
+
+    ResultEnum(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public Integer getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+}
+```
+```java
+package xxx.xxx.xxx.entity.common;
+
+public class ResultUtil {
+    /**成功且带数据**/
+    public static Result success(Object object){
+        Result result = new Result();
+        result.setCode(ResultEnum.SUCCESS.getCode());
+        result.setMsg(ResultEnum.SUCCESS.getMsg());
+        result.setData(object);
+        return result;
+    }
+    /**成功但不带数据**/
+    public static Result success(){
+
+        return success(null);
+    }
+    /**失败**/
+    public static Result error(Integer code,String msg){
+        Result result = new Result();
+        result.setCode(code);
+        result.setMsg(msg);
+        return result;
+    }
+
+}
+```
+
