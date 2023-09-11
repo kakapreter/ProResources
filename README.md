@@ -40,7 +40,7 @@ mybatis-plus.configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 # 应用服务器(Tomcat)WEB端口号
 # yml结构 相当于properties文件中的server.port=8080
 server:
-  port: 8080
+  port: 8088
 
 # 加载当前的开发环境配置
 spring:
