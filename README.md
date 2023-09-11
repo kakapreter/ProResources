@@ -87,7 +87,7 @@ logging:
       xxx:
         xxx: debug
 ```
-
+#------------------------------------------------------------------------------------------------
 #### Mybatis-plus分页查询通用配置模板类
 ```java
 package xxx.xxx.xxx.config;
@@ -110,6 +110,25 @@ public class MybatisPlusConfig {
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
         return interceptor;
     }
+}
+```
+# Mybatis-plus的使用
+### Service层
+```java
+// service接口需要继承IService<XXX>接口
+public interface XXXService extends IService<XXX> {
+
+}
+// service实现类需要继承ServiceImpl<XXXMapper, User>接口
+public class XXXServiceImpl extends ServiceImpl<XXXMapper, XXX> implements XXXService {
+
+}
+```
+
+Mapper层
+```java
+public interface XXXMapper extends BaseMapper<User> {
+
 }
 ```
 #------------------------------------------------------------------------------------------------
