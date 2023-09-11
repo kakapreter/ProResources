@@ -372,12 +372,19 @@ public class XxxApplication {
 
 ```
 # 推荐jar包
+| github地址                                                   | artifactId(jar包) | jar包作用 |
+| ----------------------------------------------------------- | ----------------- | --------- |
+| https://github.com/fengwenyi/mybatis-plus-code-generator | mybatis-plus-code-generator            | 1         |
+
 | maven地址                                                   | artifactId(jar包) | jar包作用 |
 | ----------------------------------------------------------- | ----------------- | --------- |
-| https://mvnrepository.com/artifact/org.projectlombok/lombok | lombok            | 1         |
+| https://mvnrepository.com/artifact/org.projectlombok/lombok | lombok            | 2         |
 | https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools    |spring-boot-devtools     |   web项目热部署       |
 
-> 1.简化实体类的书写,只需在实体类上添加@Data,就省略了setter,getter,toString方法,有参和无参构造方法还是需要写的
+
+> 1.MyBatis-Plus代码生成器,免除了写controller层,service层,mapper层,entity层,xml文件的麻烦,下载jar包在cmd命令窗口执行 java -jar mybatis-plus-code-generator-3.5.2.x.jar
+
+> 2.简化实体类的书写,只需在实体类上添加@Data,就省略了setter,getter,toString方法,有参和无参构造方法还是需要写的
 
 > lombok还支持@Slf4j调试工具
 
