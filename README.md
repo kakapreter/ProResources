@@ -13,6 +13,9 @@
 #### application.properties文件--mybatis配置及druid连接池配置
 
 ```properties
+# 后台测试端口
+server.port=8088
+
 # 数据库连接配置
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/your_database?useSSL=false&serverTimeZone=Asia/Shanghai
