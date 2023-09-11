@@ -38,7 +38,7 @@ mybatis-plus.configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #### application.yml文件--mybatis配置及druid连接池配置
 ```yml
 # 应用服务器(Tomcat)WEB端口号
-# yml结构 相当于properties文件中的server.port=8080
+# yml结构 相当于properties文件中的server.port=8088
 server:
   port: 8088
 
