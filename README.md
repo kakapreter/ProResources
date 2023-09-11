@@ -87,7 +87,7 @@ logging:
       xxx:
         xxx: debug
 ```
-#------------------------------------------------------------------------------------------------
+
 #### Mybatis-plus分页查询通用配置模板类
 ```java
 package xxx.xxx.xxx.config;
@@ -112,7 +112,8 @@ public class MybatisPlusConfig {
     }
 }
 ```
-# Mybatis-plus的使用
+#------------------------------------------------------------------------------------------------
+### Mybatis-plus的使用
 ### Service层
 ```java
 // service接口需要继承IService<XXX>接口
