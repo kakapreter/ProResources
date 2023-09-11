@@ -384,7 +384,7 @@ public class XxxApplication {
 
 > 1.MyBatis-Plus代码生成器,免除了写controller层,service层,mapper层,entity层,xml文件的麻烦,下载jar包在cmd命令窗口执行 java -jar mybatis-plus-code-generator-3.5.2.x.jar
 
-![](https://pic.imgdb.cn/item/64fed014661c6c8e5478d0dc.png)
+![](https://pic.imgdb.cn/item/64fed2d5661c6c8e5479a913.png)
 
 > 2.简化实体类的书写,只需在实体类上添加@Data,就省略了setter,getter,toString方法,有参和无参构造方法还是需要写的
 
