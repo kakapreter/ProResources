@@ -114,7 +114,7 @@ public class MybatisPlusConfig {
 ```
 #------------------------------------------------------------------------------------------------
 ### Mybatis-plus的使用
-### Service层
+#### Service层
 ```java
 // service接口需要继承IService<XXX>接口
 public interface XXXService extends IService<XXX> {
@@ -126,7 +126,7 @@ public class XXXServiceImpl extends ServiceImpl<XXXMapper, XXX> implements XXXSe
 }
 ```
 
-Mapper层
+#### Mapper层
 ```java
 public interface XXXMapper extends BaseMapper<User> {
 
