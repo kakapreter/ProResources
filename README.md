@@ -403,7 +403,7 @@ spring:
 ```
 #### R类
 ```java
-package xxx.xxx.xxx.entity.common;
+package xxx.xxx.xxx.service.exception;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -483,7 +483,7 @@ public class R {
 
 #### RCodeEnum类
 ```java
-package xxx.xxx.xxx.entity.common;
+package xxx.xxx.xxx.service.exception;
 import lombok.Getter;
 
 @Getter
