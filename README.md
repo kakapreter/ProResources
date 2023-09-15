@@ -438,6 +438,10 @@ package xxx.xxx.xxx.entity.common;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
+import java.util.HashMap;
+import java.util.Map;
+
 //设置统一资源返回结果集
 @Data
 @ApiModel(value = "全局统一返回结果")
@@ -449,7 +453,7 @@ public class R {
     @ApiModelProperty(value = "是否成功")
     private  Boolean success;
     @ApiModelProperty(value = "返回数据")
-    private Object data;
+    private Map<String,Object> data = new HashMap<>();
     private R() {}
     //返回成功的结果集
     public static R success(){
@@ -460,7 +464,7 @@ public class R {
         return r;
     }
     //返回带参的成功结果集
-    public static R success(Object data) {
+    public static R success(Map<String, Object> data) {
         R r = new R();
         r.setSuccess(RCodeEnum.SUCCESS.isSuccess());
         r.setCode(RCodeEnum.SUCCESS.getCode());
@@ -502,13 +506,14 @@ public class R {
         this.setCode(code);
         return this;
     }
-    public R data(Object data) {
+    public R data(Map<String, Object> data) {
         this.data = data;
         return this;
 
     }
 
 }
+      
 ```
 
 #### RCodeEnum类
@@ -526,9 +531,9 @@ public enum RCodeEnum {
     FILE_UPLOAD_ERROR(false, 21004, "文件上传错误"),
     EXCEL_DATA_IMPORT_ERROR(false, 21005, "Excel数据导入错误");
 
-    private boolean success;
-    private Integer code;
-    private String message;
+    private final boolean success;
+    private final Integer code;
+    private final String message;
     private Object data;
 
     private RCodeEnum(Boolean success, Integer code, String message) {
