@@ -534,7 +534,6 @@ public enum RCodeEnum {
     private final boolean success;
     private final Integer code;
     private final String message;
-    private Object data;
 
     private RCodeEnum(Boolean success, Integer code, String message) {
         this.success = success;
