@@ -438,7 +438,6 @@ package xxx.xxx.xxx.entity.common;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -463,15 +462,7 @@ public class R {
         r.setMessage(RCodeEnum.SUCCESS.getMessage());
         return r;
     }
-    //返回带参的成功结果集
-    public static R success(Map<String, Object> data) {
-        R r = new R();
-        r.setSuccess(RCodeEnum.SUCCESS.isSuccess());
-        r.setCode(RCodeEnum.SUCCESS.getCode());
-        r.setMessage(RCodeEnum.SUCCESS.getMessage());
-        r.setData(data);
-        return r;
-    }
+
     //返回失败的结果集
     public static R error(){
         R r = new R();
@@ -506,12 +497,17 @@ public class R {
         this.setCode(code);
         return this;
     }
-    public R data(Map<String, Object> data) {
-        this.data = data;
-        return this;
 
+    public R data(String key, Object value) {
+        this.data.put(key, value);
+        return this;
     }
 
+    public R data(Map<String,Object> map){
+        this.setData(map);
+        return this;
+    }
+    
 }
       
 ```
@@ -534,9 +530,8 @@ public enum RCodeEnum {
     private final boolean success;
     private final Integer code;
     private final String message;
-    private Map<String,Object> data;
 
-    private RCodeEnum(Boolean success, Integer code, String message) {
+    RCodeEnum(Boolean success, Integer code, String message) {
         this.success = success;
         this.code = code;
         this.message = message;
