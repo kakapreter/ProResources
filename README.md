@@ -416,9 +416,9 @@ spring:
 ```
 #### 第二步:调 Settings 
 
+![](https://pic.imgdb.cn/item/65069e53661c6c8e544d4a20.png)
+![](https://pic.imgdb.cn/item/65069e53661c6c8e544d4a2c.png)
 
-![](https://pic.imgdb.cn/item/65069d06661c6c8e544d1a68.png)
-![](https://pic.imgdb.cn/item/64f91519661c6c8e542a0ca9.png)
 > 旧版本的idea第二个图的配置如下
 > 按 Ctrl + Shift + Alt + / 快捷键调出Maintenance页面,单击Registry,勾选compiler.automake.allow.wen.app.running复选框
 
