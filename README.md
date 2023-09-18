@@ -185,7 +185,7 @@ springdoc:
 #------------------------------------------------------------------------------------------------
 #### 测试Druid连接池配置
 ```java
-package xxx.xxx.xxx;
+package xxx.xxx.xxx.baseTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -195,9 +195,12 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 @SpringBootTest
-public class DruidTest {
+public class BaseTest {
+
     @Autowired
     DataSource dataSource;
+
+    //测试数据库连接
     @Test
     public void druidTest() throws SQLException {
         //查看默认数据源
@@ -205,8 +208,14 @@ public class DruidTest {
         //获得数据库连接
         Connection connection = dataSource.getConnection();
         System.out.println(connection);
-        //close
         connection.close();
+    }
+
+    //测试本地JDK
+    @Test
+    public void localJavaVersion(){
+        System.out.println("当前系统的JDK版本:" + System.getProperty("java.version"));
+        System.out.println("当前系统的JDK路径:" + System.getProperty("java.home"));
     }
 }
 ```
