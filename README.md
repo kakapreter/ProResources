@@ -429,6 +429,7 @@ spring:
 #### 第二步:调 Settings 
 
 ![](https://pic.imgdb.cn/item/65084f46204c2e34d3a9511b.png)
+
 ![](https://pic.imgdb.cn/item/65069e53661c6c8e544d4a2c.png)
 
 > 旧版本的idea第二个图的配置如下
