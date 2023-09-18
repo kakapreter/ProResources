@@ -183,7 +183,7 @@ springdoc:
 
 ### Swagger默认的访问路径http://localhost:8080/swagger-ui/index.html#/
 #------------------------------------------------------------------------------------------------
-#### 测试Druid连接池配置
+#### 基本测试
 ```java
 package xxx.xxx.xxx.baseTest;
 
