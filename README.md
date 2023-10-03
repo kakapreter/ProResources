@@ -430,7 +430,7 @@ spring:
 
 ![](https://pic.imgdb.cn/item/65084f46204c2e34d3a9511b.png)
 
-![](https://pic.imgdb.cn/item/65069e53661c6c8e544d4a2c.png)
+![](https://pic.imgdb.cn/item/651c5ad3c458853aef6cde85.png)
 
 > 旧版本的idea第二个图的配置如下
 > 按 Ctrl + Shift + Alt + / 快捷键调出Maintenance页面,单击Registry,勾选compiler.automake.allow.wen.app.running复选框
