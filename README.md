@@ -396,7 +396,7 @@ public class XxxApplication {
 
 > 1.MyBatis-Plus代码生成器,免除了写controller层,service层,mapper层,entity层,xml文件的麻烦,下载jar包在cmd命令窗口执行 java -jar mybatis-plus-code-generator-3.5.2.x.jar
 
-![](https://pic.imgdb.cn/item/64fed555661c6c8e547a68b0.png)
+![](https://pic.imgdb.cn/item/651ff859c458853aefc7343a.png)
 
 ![](https://pic.imgdb.cn/item/64fed547661c6c8e547a64c4.png)
 
