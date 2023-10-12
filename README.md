@@ -401,7 +401,7 @@ public class XxxApplication {
 
 ![](https://pic.imgdb.cn/item/64fed547661c6c8e547a64c4.png)
 
-> 2.简化实体类的书写,只需在实体类上添加@Data,就省略了setter,getter,toString方法,有参和无参构造方法还是需要写的
+> 2.简化实体类的书写,只需在实体类上添加@Data,@AllArgsConstructor,@NoArgsConstructor
 
 > lombok还支持@Slf4j调试工具
 
