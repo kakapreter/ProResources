@@ -208,7 +208,7 @@ public class Swagger2Config {
 
 ```
 
-#### aliyun的SpringBoot 3.0.2 Swagger2的jar包依赖
+#### aliyun的SpringBoot 2.7.5 Swagger2的jar包依赖
 ```xml
         <!--swagger2依赖-->
         <dependency>
