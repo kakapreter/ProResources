@@ -160,7 +160,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.tedu.nnshop.controller"))
+                .apis(RequestHandlerSelectors.basePackage("xxx.xxx.xxx.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 //配置全局登录
