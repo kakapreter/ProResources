@@ -137,51 +137,104 @@ public interface XXXMapper extends BaseMapper<User> {
 ```java
 package xxx.xxx.xxx.config;
 
-import io.swagger.v3.oas.models.ExternalDocumentation;
-import io.swagger.v3.oas.models.OpenAPI;
-import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.info.License;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.*;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spi.service.contexts.SecurityContext;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Configuration
-public class SwaggerConfig {
+@EnableSwagger2
+public class Swagger2Config {
+
     @Bean
-    public OpenAPI springShopOpenAPI() {
-        return new OpenAPI()
-                .info(new Info().title("项目演示")
-                        .description("项目演示API文档")
-                        .version("v1.0.0")
-                        .license(new License().name("Apache 2.0").url("http://springdoc.org")))
-                .externalDocs(new ExternalDocumentation()
-                        .description("外部文档")
-                        .url("https://springshop.wiki.github.org/docs"));
+    public Docket createRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("cn.tedu.nnshop.controller"))
+                .paths(PathSelectors.any())
+                .build()
+                //配置全局登录
+                .securityContexts(securityContexts())
+                .securitySchemes(securitySchemes());
+    }
+
+    private ApiInfo apiInfo() {
+        return new ApiInfoBuilder()
+                .title("项目演示")
+                .description("接口文档")
+                .contact(new Contact("kakapreter", "http://localhost:8088/doc.html", ""))
+                .version("1.0")
+                .build();
+    }
+
+    private List<ApiKey> securitySchemes() {
+        List<ApiKey> apiKeys = new ArrayList<>();
+        apiKeys.add(new ApiKey("Authorization", "Authorization", "header"));
+        return apiKeys;
+    }
+    private List<SecurityContext> securityContexts() {
+        //设置需要登录认证的路径
+        List<SecurityContext> list = new ArrayList<>();
+        list.add(SecurityContext.builder().securityReferences(defaultAuth()).forPaths(PathSelectors.any()).build());
+        return list;
+    }
+
+//    private SecurityContext getContextByPath(String pathRegex) {
+//        return SecurityContext.builder()
+//                .securityReferences(defaultAuth())
+//                .forPaths(PathSelectors.regex(pathRegex))
+//                .build();
+//    }
+
+    private List<SecurityReference> defaultAuth() {
+        List<SecurityReference> list = new ArrayList<>();
+        AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
+        AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
+        authorizationScopes[0] = authorizationScope;
+        list.add(new SecurityReference("Authorization", authorizationScopes));
+        return list;
     }
 }
+
 ```
 
 #### aliyun的SpringBoot 3.0.2 Swagger2的jar包依赖
 ```xml
+        <!--swagger2依赖-->
         <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.0.2</version>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
         </dependency>
+
+        <!--swagger第三方ui依赖-->
         <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
-            <version>2.0.2</version>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.6</version>
         </dependency>
 ```
 
-#### Swagger的yml配置
+#### Swagger2的yml配置
 ```yml
-springdoc:
-  swagger-ui:
-    path: /swagger-ui.html
+spring:
+  #Swagger2配置
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 ```
 
-### Swagger默认的访问路径http://localhost:8080/swagger-ui/index.html#/
+### Swagger默认的访问路径http://localhost:8080/doc.html
 #------------------------------------------------------------------------------------------------
 #### 基本测试
 ```java
