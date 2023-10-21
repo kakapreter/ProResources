@@ -494,7 +494,7 @@ spring:
 #### 通用设计,这里默认使用了lombok
 
 ```java
-package cn.tedu.nnshop.exception;
+package xxx.xxx.xxx.exception;
 import lombok.Getter;
 
 @Getter
@@ -515,7 +515,7 @@ public class AppException extends RuntimeException{
 ```
 
 ```java
-package cn.tedu.nnshop.exception;
+package xxx.xxx.xxx.exception;
 import lombok.Getter;
 
 //这个枚举类中定义的都是跟业务有关的异常
@@ -550,8 +550,8 @@ public enum AppExceptionCodeMsg {
 ```
 
 ```java
-package cn.tedu.nnshop.exception;
-import cn.tedu.nnshop.response.JsonResult;
+package xxx.xxx.xxx.exception;
+import xxx.xxx.xxx.response.JsonResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -573,8 +573,8 @@ public class GlobalExceptionHandler {
 ```
 
 ```java
-package cn.tedu.nnshop.response;
-import cn.tedu.nnshop.exception.AppExceptionCodeMsg;
+package xxx.xxx.xxx.response;
+import xxx.xxx.xxx.xxx.AppExceptionCodeMsg;
 import lombok.Getter;
 import java.util.HashMap;
 import java.util.Map;
