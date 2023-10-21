@@ -574,7 +574,7 @@ public class GlobalExceptionHandler {
 
 ```java
 package xxx.xxx.xxx.response;
-import xxx.xxx.xxx.xxx.AppExceptionCodeMsg;
+import xxx.xxx.xxx.exception.AppExceptionCodeMsg;
 import lombok.Getter;
 import java.util.HashMap;
 import java.util.Map;
