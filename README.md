@@ -491,175 +491,129 @@ spring:
 
 # 常用设计
 ### 对于前端与后端数据交互通用类的设计
-#### 通用R类,RCodeEnum类设计,这里默认使用了lombok
-#### 加入依赖库
-```xml
-        <dependency>
-            <groupId>io.swagger</groupId>
-            <artifactId>swagger-annotations</artifactId>
-            <version>1.5.22</version>
-        </dependency>
-```
-#### R类
+#### 通用设计,这里默认使用了lombok
+
 ```java
-package xxx.xxx.xxx.entity.common;
-
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import java.util.HashMap;
-import java.util.Map;
-
-//设置统一资源返回结果集
-@Data
-@ApiModel(value = "全局统一返回结果")
-public class R {
-    @ApiModelProperty(value = "返回码")
-    private  Integer code;
-    @ApiModelProperty(value = "返回消息")
-    private  String message;
-    @ApiModelProperty(value = "是否成功")
-    private  Boolean success;
-    @ApiModelProperty(value = "返回数据")
-    private Map<String,Object> data = new HashMap<>();
-    private R() {}
-    //返回成功的结果集
-    public static R success(){
-        R r = new R();
-        r.setSuccess(RCodeEnum.SUCCESS.isSuccess());
-        r.setCode(RCodeEnum.SUCCESS.getCode());
-        r.setMessage(RCodeEnum.SUCCESS.getMessage());
-        return r;
-    }
-
-    //返回失败的结果集
-    public static R error(){
-        R r = new R();
-        r.setSuccess(RCodeEnum.UNKNOWN_REASON.isSuccess());
-        r.setCode(RCodeEnum.UNKNOWN_REASON.getCode());
-        r.setMessage(RCodeEnum.UNKNOWN_REASON.getMessage());
-        return r;
-    }
-    /**
-     * @param rCodeEnum
-     * @return
-     */
-    public static R setResult(RCodeEnum rCodeEnum){
-        R r = new R();
-        r.setSuccess(rCodeEnum.isSuccess());
-        r.setCode(rCodeEnum.getCode());
-        r.setMessage(rCodeEnum.getMessage());
-        return r;
-    }
-
-    public R success(Boolean success){
-        this.setSuccess(success);
-        return this;
-    }
-
-    public R message(String message){
-        this.setMessage(message);
-        return this;
-    }
-
-    public R code(Integer code){
-        this.setCode(code);
-        return this;
-    }
-
-    public R data(String key, Object value) {
-        this.data.put(key, value);
-        return this;
-    }
-
-    public R data(Map<String,Object> map){
-        this.setData(map);
-        return this;
-    }
-    
-}
-      
-```
-
-#### RCodeEnum类
-```java
-package xxx.xxx.xxx.entity.common;
+package cn.tedu.nnshop.exception;
 import lombok.Getter;
 
 @Getter
-public enum RCodeEnum {
-    SUCCESS(true, 20000, "成功"),
-    UNKNOWN_REASON(false, 20001, "未知错误"),
-    BAD_SQL_GRAMMAR(false, 21001, "sql语法错误"),
-    JSON_PARSE_ERROR(false, 21002, "json解析异常"),
-    PARAM_ERROR(false, 21003, "参数不正确"),
-    FILE_UPLOAD_ERROR(false, 21004, "文件上传错误"),
-    EXCEL_DATA_IMPORT_ERROR(false, 21005, "Excel数据导入错误");
-
-    private final boolean success;
-    private final Integer code;
-    private final String message;
-
-    RCodeEnum(Boolean success, Integer code, String message) {
-        this.success = success;
+public class AppException extends RuntimeException{
+    private int code = 50000;
+    private String msg = "服务器异常";
+    public AppException(AppExceptionCodeMsg appExceptionCodeMsg){
+        super();
+        this.code = appExceptionCodeMsg.getCode();
+        this.msg = appExceptionCodeMsg.getMsg();
+    }
+    public AppException(int code,String msg){
+        super();
         this.code = code;
-        this.message = message;
+        this.msg = msg;
     }
 }
-
 ```
 
-#### 全局异常处理类
 ```java
-package xxx.xxx.xxx.service.common;
+package cn.tedu.nnshop.exception;
+import lombok.Getter;
 
-import xxx.xxx.xxx.entity.common.R;
+//这个枚举类中定义的都是跟业务有关的异常
+@Getter
+public enum AppExceptionCodeMsg {
+    OK(20000,"成功"),
+    ERR_BAD_REQUEST(40000,"请求参数格式错误"),
+    ERR_UNAUTHORIZED(40100,"登录失败, 用户名或密码错误"),
+    ERR_UNAUTHORIZED_DISABLED(40101,"登录失败, 用户被禁用"),
+    ERR_FORBIDDEN(40300,"无权限"),
+    ERR_NOT_FOUND(40400,"数据不存在"),
+    ERR_CONFLICT(40900,"数据冲突"),
+    ERR_EXISTS(40901,"数据冲突, 已经存在"),
+    ERR_IS_ASSOCIATED(40902,"数据冲突, 已经关联"),
+    ERR_SAVE_FAILED(50010,"插入数据错误"),
+    ERR_DELETE_FAILED(50100,"删除数据错误"),
+    ERR_UPDATE_FAILED(50200,"修改数据错误"),
+    ERR_FILE_UPLOAD(50300,"文件上传错误"),
+    ERR_JWT_EXPIRED(60000,"JWT已过期"),
+    ERR_JWT_SIGNATURE(60100,"验证签名失败"),
+    ERR_JWT_MALFORMED(60200,"JWT格式错误"),
+    ERR_JWT_LOGOUT(60300,"JWT已退出登录"),
+    ERR_UNKNOWN(99999,"未知错误")
+    ;
+    private final int code ;
+    private final String msg ;
+    AppExceptionCodeMsg(int code, String msg){
+        this.code = code;
+        this.msg = msg;
+    }
+}
+```
 
+```java
+package cn.tedu.nnshop.exception;
+import cn.tedu.nnshop.response.JsonResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler(value = {Exception.class})
     @ResponseBody
-    public R error(Exception e){
-        e.printStackTrace();
-        return R.error().message("执行了全局异常处理");
+    public <T> JsonResult<T> exceptionHandler(Exception e){
+        //这里先判断拦截到的Exception是不是我们自定义的异常类型
+        if(e instanceof AppException){
+            AppException appException = (AppException)e;
+            return JsonResult.error(appException.getCode(),appException.getMsg());
+        }
+        //如果拦截的异常不是我们自定义的异常(例如：数据库主键冲突)
+        return JsonResult.error(50000,"服务器端异常");
     }
 }
-
 ```
-#### 跨域配置类
+
 ```java
-package xxx.xxx.xxx.config;
+package cn.tedu.nnshop.response;
+import cn.tedu.nnshop.exception.AppExceptionCodeMsg;
+import lombok.Getter;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
-
-/**
- * 这里是跨域的设置
- */
-
-@Configuration
-public class CorsConfig {
-
-    // 当前跨域请求最大有效时长。这里默认1天
-    private static final long MAX_AGE = 24 * 60 * 60;
-
-    @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("*"); // 1 设置访问源地址
-        corsConfiguration.addAllowedHeader("*"); // 2 设置访问源请求头
-        corsConfiguration.addAllowedMethod("*"); // 3 设置访问源请求方法
-        corsConfiguration.setMaxAge(MAX_AGE);
-        source.registerCorsConfiguration("/**", corsConfiguration); // 4 对接口配置跨域设置
-        return new CorsFilter(source);
+@Getter
+public class JsonResult<T> {
+    //服务端返回的错误码
+    private int code = 20000;
+    //服务端返回的错误信息
+    private String msg = "success";
+    //我们服务端返回的数据
+    private final T data;
+    private JsonResult(int code,String msg,T data){
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
+    private JsonResult(int code,String msg){
+        this.code = code;
+        this.msg = msg;
+        this.data = null;
+    }
+    public static JsonResult<Void> success(){
+        return null;
+    }
+    public static <T> JsonResult<T> success(int code,String msg){
+        return new JsonResult<T>(20000, "success");
+    }
+    public static <T> JsonResult<T> success(T data){
+        return new JsonResult<T>(20000, "success", data);
+    }
+    public static <T> JsonResult<T> success(String msg,T data){
+        return new JsonResult<T>(20000,msg, data);
+    }
+    public static <T> JsonResult<T> error(AppExceptionCodeMsg appExceptionCodeMsg){
+        return new JsonResult<T>(appExceptionCodeMsg.getCode(), appExceptionCodeMsg.getMsg(), null);
+    }
+    public static <T> JsonResult<T> error(int code,String msg){
+        return new JsonResult<T>(code,msg, null);
     }
 }
 ```
