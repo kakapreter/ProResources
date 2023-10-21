@@ -576,8 +576,6 @@ public class GlobalExceptionHandler {
 package xxx.xxx.xxx.response;
 import xxx.xxx.xxx.exception.AppExceptionCodeMsg;
 import lombok.Getter;
-import java.util.HashMap;
-import java.util.Map;
 
 @Getter
 public class JsonResult<T> {
