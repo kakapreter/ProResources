@@ -133,7 +133,7 @@ public interface XXXMapper extends BaseMapper<User> {
 }
 ```
 ---
-#### Swagger2通用配置模板类------Swagger2是能够以REST风格方式在本地网页测试接口的工具
+### Swagger2通用配置模板类------Swagger2是能够以REST风格方式在本地网页测试接口的工具
 ```java
 package xxx.xxx.xxx.config;
 
