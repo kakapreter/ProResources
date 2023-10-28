@@ -615,3 +615,44 @@ public class JsonResult<T> {
     }
 }
 ```
+
+### 代码测速工具类
+```java
+public class TestCodeRunningSpeedUtil {
+    public static long startMilliSecond(){
+        long current = System.currentTimeMillis();
+        System.out.println("staTime: " + current + " ms");
+        return current;
+    }
+    public static long endMilliSecond(){
+        long current = System.currentTimeMillis();
+        System.out.println("endTime: " + current + " ms");
+        return current;
+    }
+    public static long startNanSecond(){
+        long current = System.nanoTime();
+        System.out.println("staTime: " + current + " ns");
+        return current;
+    }
+    public static long endNanSecond(){
+        long current = System.nanoTime();
+        System.out.println("endTime: " + current + " ns");
+        return current;
+    }
+}
+```
+
+```java
+import cn.tedu.award.service.utils.TestCodeRunningSpeedUtil;
+public class Main {
+    public static void main(String[] args) {
+        long startTime = TestCodeRunningSpeedUtil.startNanSecond();
+        for (int i = 0; i < 10000; i++) {
+            int a = 1;
+        }
+        long endTime= TestCodeRunningSpeedUtil.endNanSecond();
+        System.out.println("Code takes "+(endTime-startTime)+" ns");
+    }
+}
+```
+
