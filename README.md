@@ -645,14 +645,24 @@ public class TestCodeRunningSpeedUtil {
 
 ```java
 import cn.tedu.award.service.utils.TestCodeRunningSpeedUtil;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        long startTime = TestCodeRunningSpeedUtil.startNanSecond();
-        for (int i = 0; i < 10000; i++) {
-            int a = 1;
-        }
-        long endTime= TestCodeRunningSpeedUtil.endNanSecond();
-        System.out.println("Code takes "+(endTime-startTime)+" ns");
+        Integer[] arr = {1,5,2,7,8,3,6,4};
+        List<Integer> list = Arrays.asList(arr);
+        System.out.println("source: " + list);
+
+        long startTime = TestCodeRunningSpeedUtil.startMilliSecond();
+        Collections.sort(list);
+        long endTime= TestCodeRunningSpeedUtil.endMilliSecond();
+        
+        System.out.println("Code takes "+(endTime-startTime)+" ms");
+
+        System.out.println( "result: " + list);
     }
 }
 ```
