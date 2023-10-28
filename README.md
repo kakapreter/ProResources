@@ -656,11 +656,11 @@ public class Main {
         List<Integer> list = Arrays.asList(arr);
         System.out.println("source: " + list);
 
-        long startTime = TestCodeRunningSpeedUtil.startMilliSecond();
+        long staTime = TestCodeRunningSpeedUtil.startMilliSecond();
         Collections.sort(list);
         long endTime= TestCodeRunningSpeedUtil.endMilliSecond();
         
-        System.out.println("Code takes "+(endTime-startTime)+" ms");
+        System.out.println("Code takes "+(endTime-staTime)+" ms");
 
         System.out.println( "result: " + list);
     }
