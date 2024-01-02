@@ -235,6 +235,8 @@ spring:
 ```
 
 ### Swagger默认的访问路径http://localhost:8080/doc.html
+SpringBoot3整合看这个文档https://doc.xiaominfo.com/docs/quick-start
+
 ---
 #### 基本测试
 ```java
