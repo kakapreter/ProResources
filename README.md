@@ -234,8 +234,8 @@ spring:
       matching-strategy: ant_path_matcher
 ```
 
-### Swagger默认的访问路径http://localhost:8080/doc.html
-SpringBoot3整合看这个文档https://doc.xiaominfo.com/docs/quick-start
+### Swagger默认的访问路径 http://localhost:8080/doc.html
+### SpringBoot3的整合看这个文档 https://doc.xiaominfo.com/docs/quick-start
 
 ---
 #### 基本测试
