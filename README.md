@@ -1,6 +1,9 @@
 ---
 # Spring Cloud
 ## 01-Spring Security
+|                          maven地址                           | artifactId(jar包)         | jar包作用         |
+| :----------------------------------------------------------: | ------------------------- | ----------------- |
+| https://mvnrepository.com/artifact/mysql/mysql-connector-java | mysql-connector-java      | java数据库驱动(官方)    |
 
 
 
