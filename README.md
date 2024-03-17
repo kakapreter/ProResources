@@ -3,8 +3,7 @@
 
 |                          maven地址                           | artifactId(jar包)         | jar包作用         |
 | :----------------------------------------------------------: | ------------------------- | ----------------- |
-| https://mvnrepository.com/artifact/com.mysql/mysql-connector-j | mysql-connector-j      | java数据库驱动    |
-| https://mvnrepository.com/artifact/mysql/mysql-connector-java | mysql-connector-java      | java数据库驱动(官方)    |
+| https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security | spring-boot-starter-security      | spring security    |
 
 
 
