@@ -98,6 +98,61 @@ logging:
         xxx: debug
 ```
 
+#### bootstrap.yml文件--SpringCloud配置
+```yml
+spring:
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        server-addr: ip:8848
+        namespace: namespaceId
+      config:
+        username: nacos
+        password: nacos
+        file-extension: yaml
+        server-addr: ip:8848
+        namespace: namespaceId
+  profiles:
+    active: dev # 环境设置
+  application:
+    name: user-service # 服务名
+```
+
+```yml
+spring:
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        server-addr: ip:8848
+        namespace: namespaceId
+      config:
+        username: nacos
+        password: nacos
+        file-extension: yaml
+        server-addr: ip:8848
+        namespace: namespaceId
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes: # 路由
+        - id: user-service #路由ID，没有固定要求，但是要保证唯一，建议配合服务名
+          uri: lb://user-service # 匹配提供服务的路由地址
+          predicates: # 断言
+            - Path=/api/user/** # 断言，路径相匹配进行路由
+            # http://localhost:8082/api/user/** 路由到 http://localhost:8084/api/user/**
+            # 从而实现了用户访问网关，网关把各个请求路由到各种微服务中
+  profiles:
+    active: dev # 环境设置
+  application:
+    name: gateway-service
+
+```
+
 #### Mybatis-plus分页查询通用配置模板类
 ```java
 package xxx.xxx.xxx.config;
