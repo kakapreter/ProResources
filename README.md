@@ -154,6 +154,7 @@ spring:
     name: gateway-service
 
 ```
+##### 更多关于Spring Gateway的用法请阅读手册: https://springdoc.cn/spring-cloud-gateway/
 
 #### Mybatis-plus分页查询通用配置模板类
 ```java
