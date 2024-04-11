@@ -99,6 +99,7 @@ logging:
 ```
 
 #### bootstrap.yml文件--SpringCloud配置
+##### others-service
 ```yml
 spring:
   cloud:
@@ -120,6 +121,7 @@ spring:
     name: user-service # 服务名
 ```
 
+##### gateway-service
 ```yml
 spring:
   cloud:
