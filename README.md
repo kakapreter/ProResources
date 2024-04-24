@@ -35,7 +35,7 @@ spring.datasource.password=your_password
 spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
 
 # 配置xml的路径---resources目录下的mappers文件夹
-mybatis.mapper-locations=classpath:mappers/*.xml
+mybatis.mapper-locations=classpath*:mappers/**/*.xml
 #mybatis需要手动开启驼峰命名支持,mybatis-plus默认是开启的
 mybatis.configuration.map-underscore-to-camel-case=true
 
