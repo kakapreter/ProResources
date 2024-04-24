@@ -79,13 +79,13 @@ spring:
 
 # mybatis-plus配置
 mybatis-plus:
-  mapper-locations: classpath:mappers/**/*.xml
+  mapper-locations: classpath*:mappers/**/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # mybatis配置
 mybatis:
-  mapper-locations: classpath:mappers/**/*.xml
+  mapper-locations: classpath*:mappers/**/*.xml
   configuration:
     # 开启驼峰命名支持
     map-underscore-to-camel-case: true
