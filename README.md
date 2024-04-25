@@ -516,7 +516,7 @@ public class XxxApplication {
 | https://mvnrepository.com/artifact/org.projectlombok/lombok | lombok            | 2         |
 | https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools    |spring-boot-devtools     |   web项目热部署       |
 |https://mvnrepository.com/artifact/cn.hutool/hutool-all|hutool-all|常用的java工具包|
-
+|https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-openapi3-jakarta-spring-boot-starter| knife4j-openapi3-jakarta-spring-boot-starter| 后端文档|
 
 > 1.MyBatis-Plus代码生成器,免除了写controller层,service层,mapper层,entity层,xml文件的麻烦,下载jar包在cmd命令窗口执行 java -jar mybatis-plus-code-generator-3.5.2.x.jar
 
