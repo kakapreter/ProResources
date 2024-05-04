@@ -692,9 +692,13 @@ package xxx.xxx.xxx.controller.common;
 
 import xxx.xxx.xxx.response.JsonResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//@RequestMapping("/api/v1/")
+//@CrossOrigin
+//@RestController
 public interface CommonController<T> {
 
         JsonResult<Void> add(T object);
@@ -711,7 +715,30 @@ public interface CommonController<T> {
 
         JsonResult<Page<T>> listPage(Long current, Long size);
 
+
+//        @PostMapping("/object/add")
+//        JsonResult<Void> add(@RequestBody T object);
+//
+//        @DeleteMapping("/object/removeOne/{objectId}")
+//        JsonResult<Void> removeOne(@PathVariable(name = "objectId")  Long objectId);
+//
+//        @DeleteMapping("/object/remove/{objectIds}")
+//        JsonResult<Void> remove(@PathVariable(name = "objectIds") Long [] objectIds);
+//
+//        @PutMapping("/object/edit")
+//        JsonResult<Void> edit(@RequestBody T object);
+//
+//        @GetMapping("/object/getOne/{objectId}")
+//        JsonResult<T> getOne( @PathVariable(name = "objectId")  Long objectId);
+//
+//        @GetMapping("/object/list")
+//        JsonResult<List<T>> listData();
+//
+//        @GetMapping("/object/list/{current}/{size}")
+//        JsonResult<Page<T>> listPage(@PathVariable(name = "current") Long current, @PathVariable(name = "size") Long size);
+
 }
+
 
 ```
 ---
