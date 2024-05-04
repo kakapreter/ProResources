@@ -728,8 +728,8 @@ public interface CommonController<T> {
 //        @PutMapping("/object/edit")
 //        JsonResult<Void> edit(@RequestBody T object);
 //
-//        @GetMapping("/object/getOne/{objectId}")
-//        JsonResult<T> getOne( @PathVariable(name = "objectId")  Long objectId);
+//        @GetMapping("/object/queryOne/{objectId}")
+//        JsonResult<T> queryOne( @PathVariable(name = "objectId")  Long objectId);
 //
 //        @GetMapping("/object")
 //        JsonResult<List<T>> listData();
