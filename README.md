@@ -686,7 +686,7 @@ public class JsonResult<T> {
 }
 ```
 ---
-## 通用Controller层接口需要整合Mybatis-Plus,与上面的通用设计
+## Controller层通用接口,需要整合Mybatis-Plus与上面的"通用设计"
 ```java
 package xxx.xxx.xxx.controller.common;
 
