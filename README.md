@@ -709,7 +709,7 @@ public interface CommonController<T> {
 
         JsonResult<Void> edit(T object);
 
-        JsonResult<T> getOne(Long objectId);
+        JsonResult<T> queryOne(Long objectId);
 
         JsonResult<List<T>> listData();
 
