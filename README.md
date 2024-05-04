@@ -686,6 +686,33 @@ public class JsonResult<T> {
 }
 ```
 ---
+## 通用Controller层接口需要整合Mybatis-Plus,与上面的通用设计
+```java
+package xxx.xxx.xxx.controller.common;
+
+import xxx.xxx.xxx.response.JsonResult;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
+import java.util.List;
+
+public interface CommonController<T> {
+
+        JsonResult<Void> save(T object);
+
+        JsonResult<Void> delete(Long id);
+
+        JsonResult<Void> update(T object);
+
+        JsonResult<T> getOne(Long id);
+
+        JsonResult<List<T>> listAll();
+
+        JsonResult<Page<T>> listPage(Long current, Long size);
+
+}
+
+```
+---
 
 ## 代码测速工具类
 ```java
