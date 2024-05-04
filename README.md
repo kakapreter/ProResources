@@ -705,7 +705,7 @@ public interface CommonController<T> {
 
         JsonResult<Void> edit(T object);
 
-        JsonResult<T> getInfo(Long objectId);
+        JsonResult<T> getOne(Long objectId);
 
         JsonResult<List<T>> listData();
 
