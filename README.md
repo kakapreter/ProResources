@@ -699,13 +699,13 @@ public interface CommonController<T> {
 
         JsonResult<Void> add(T object);
 
-        JsonResult<Void> removeOne(Long id);
+        JsonResult<Void> removeOne(Long objectId);
 
-        JsonResult<Void> remove(Long [] Ids);
+        JsonResult<Void> remove(Long [] objectIds);
 
         JsonResult<Void> edit(T object);
 
-        JsonResult<T> getInfo(Long id);
+        JsonResult<T> getInfo(Long objectId);
 
         JsonResult<List<T>> listData();
 
