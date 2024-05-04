@@ -731,10 +731,10 @@ public interface CommonController<T> {
 //        @GetMapping("/object/getOne/{objectId}")
 //        JsonResult<T> getOne( @PathVariable(name = "objectId")  Long objectId);
 //
-//        @GetMapping("/object/listData")
+//        @GetMapping("/object")
 //        JsonResult<List<T>> listData();
 //
-//        @GetMapping("/object/listPage/{current}/{size}")
+//        @GetMapping("/object/{current}/{size}")
 //        JsonResult<Page<T>> listPage(@PathVariable(name = "current") Long current, @PathVariable(name = "size") Long size);
 
 }
