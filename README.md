@@ -722,8 +722,8 @@ public interface CommonController<T> {
 //        @DeleteMapping("/object/removeOne/{objectId}")
 //        JsonResult<Void> removeOne(@PathVariable(name = "objectId")  Long objectId);
 //
-//        @DeleteMapping("/object/remove/{objectIds}")
-//        JsonResult<Void> remove(@PathVariable(name = "objectIds") List<Long> objectIds);
+//        @DeleteMapping("/object/remove")
+//        JsonResult<Void> remove(@RequestBody List<Long> objectIds);
 //
 //        @PutMapping("/object/edit")
 //        JsonResult<Void> edit(@RequestBody T object);
