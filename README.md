@@ -697,15 +697,17 @@ import java.util.List;
 
 public interface CommonController<T> {
 
-        JsonResult<Void> save(T object);
+        JsonResult<Void> add(T object);
 
-        JsonResult<Void> delete(Long id);
+        JsonResult<Void> removeOne(Long id);
 
-        JsonResult<Void> update(T object);
+        JsonResult<Void> remove(Long [] Ids);
 
-        JsonResult<T> getOne(Long id);
+        JsonResult<Void> edit(T object);
 
-        JsonResult<List<T>> listAll();
+        JsonResult<T> getInfo(Long id);
+
+        JsonResult<List<T>> listData();
 
         JsonResult<Page<T>> listPage(Long current, Long size);
 
