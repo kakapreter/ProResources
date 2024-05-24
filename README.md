@@ -716,35 +716,35 @@ public interface CommonController<T> {
         JsonResult<Page<T>> listPage(Long current, Long size);
 
 
-//        @PostMapping("/object/add")
-//        public JsonResult<Void> add(@RequestBody T object){
-//            return null;
-//          }
+//      @PostMapping("/object/add")
+//      public JsonResult<Void> add(@RequestBody T object){
+//          return null;
+//        }
 //
-//        @DeleteMapping("/object/removeOne/{objectId}")
-//        public JsonResult<Void> removeOne(@PathVariable(name = "objectId")  Long objectId){
+//      @DeleteMapping("/object/removeOne/{objectId}")
+//      public JsonResult<Void> removeOne(@PathVariable(name = "objectId")  Long objectId){
+//          return null;
+//        }
+//      @DeleteMapping("/object/remove")
+//      public JsonResult<Void> remove(@RequestBody List<Long> objectIds){
 //            return null;
-//          }
-//        @DeleteMapping("/object/remove")
-//        public JsonResult<Void> remove(@RequestBody List<Long> objectIds){
-//              return null;
-//          }
-//        @PutMapping("/object/edit")
-//        public JsonResult<Void> edit(@RequestBody T object){
-//              return null;
-//          }
-//        @GetMapping("/object/queryOne/{objectId}")
-//        public JsonResult<T> queryOne( @PathVariable(name = "objectId")  Long objectId){
-//              return null;
-//          }
-//        @GetMapping("/object")
-//        public JsonResult<List<T>> listData(){
-//              return null;
-//          }
-//        @GetMapping("/object/{current}/{size}")
-//        public JsonResult<Page<T>> listPage(@PathVariable(name = "current") Long current, @PathVariable(name = "size") Long size){
-//              return null;
-//          }
+//        }
+//      @PutMapping("/object/edit")
+//      public JsonResult<Void> edit(@RequestBody T object){
+//            return null;
+//        }
+//      @GetMapping("/object/queryOne/{objectId}")
+//      public JsonResult<T> queryOne( @PathVariable(name = "objectId")  Long objectId){
+//            return null;
+//        }
+//      @GetMapping("/object")
+//      public JsonResult<List<T>> listData(){
+//            return null;
+//        }
+//      @GetMapping("/object/{current}/{size}")
+//      public JsonResult<Page<T>> listPage(@PathVariable(name = "current") Long current, @PathVariable(name = "size") Long size){
+//            return null;
+//        }
 }
 
 
