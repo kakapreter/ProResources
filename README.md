@@ -669,7 +669,7 @@ public class JsonResult<T> {
         return null;
     }
     public static <T> JsonResult<T> success(int code,String msg){
-        return new JsonResult<T>(20000, "success");
+        return new JsonResult<T>(code, msg);
     }
     public static <T> JsonResult<T> success(T data){
         return new JsonResult<T>(20000, "success", data);
