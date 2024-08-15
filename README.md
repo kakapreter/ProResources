@@ -522,7 +522,7 @@ public class XxxApplication {
 
 ![ac4bd11373f08202a4c845555bfbfbedab641b06](https://t3.picb.cc/2024/08/15/ibAeVs.png)
 
-![image](https://pic.imgdb.cn/item/64fed547661c6c8e547a64c4.png)
+![7468686c6f2633337a757079](https://t3.picb.cc/2024/08/15/ibAlG7.png)
 
 > 2.简化实体类的书写,只需在实体类上添加@Data,@AllArgsConstructor,@NoArgsConstructor
 
