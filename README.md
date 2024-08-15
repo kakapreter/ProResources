@@ -520,9 +520,9 @@ public class XxxApplication {
 
 > 1.MyBatis-Plus代码生成器,免除了写controller层,service层,mapper层,entity层,xml文件的麻烦,下载jar包在cmd命令窗口执行 java -jar mybatis-plus-code-generator-3.5.2.x.jar
 
-![](https://pic.imgdb.cn/item/651ff859c458853aefc7343a.png)
+![image](https://pic.imgdb.cn/item/651ff859c458853aefc7343a.png)
 
-![](https://pic.imgdb.cn/item/64fed547661c6c8e547a64c4.png)
+![image](https://pic.imgdb.cn/item/64fed547661c6c8e547a64c4.png)
 
 > 2.简化实体类的书写,只需在实体类上添加@Data,@AllArgsConstructor,@NoArgsConstructor
 
@@ -552,9 +552,9 @@ spring:
 ```
 #### 第二步:调 Settings 
 
-![](https://pic.imgdb.cn/item/65084f46204c2e34d3a9511b.png)
+![image](https://pic.imgdb.cn/item/65084f46204c2e34d3a9511b.png)
 
-![](https://pic.imgdb.cn/item/651c5b8ac458853aef6cf31d.png)
+![image](https://pic.imgdb.cn/item/651c5b8ac458853aef6cf31d.png)
 
 > 旧版本的idea第二个图的配置如下
 > 按 Ctrl + Shift + Alt + / 快捷键调出Maintenance页面,单击Registry,勾选compiler.automake.allow.wen.app.running复选框
