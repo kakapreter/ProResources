@@ -521,7 +521,6 @@ public class XxxApplication {
 > 1.MyBatis-Plus代码生成器,免除了写controller层,service层,mapper层,entity层,xml文件的麻烦,下载jar包在cmd命令窗口执行 java -jar mybatis-plus-code-generator-3.5.2.x.jar
 
 ![ac4bd11373f08202a4c845555bfbfbedab641b06](https://t3.picb.cc/2024/08/15/ibAeVs.png)
-
 ![7468686c6f2633337a757079](https://t3.picb.cc/2024/08/15/ibAlG7.png)
 
 > 2.简化实体类的书写,只需在实体类上添加@Data,@AllArgsConstructor,@NoArgsConstructor
@@ -553,7 +552,6 @@ spring:
 #### 第二步:调 Settings 
 
 ![7468686c6f2633337a7570796](https://t3.picb.cc/2024/08/15/ibAup6.png)
-
 ![7468686c6f26339](https://t3.picb.cc/2024/08/15/ibACYT.png)
 
 > 旧版本的idea第二个图的配置如下
