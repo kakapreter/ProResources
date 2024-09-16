@@ -403,12 +403,14 @@ public class XxxApplication {
 > 所以我们只需要引入web组件即可:
 
 ### 日志配置
+
+src/main/resources/application.properties
 ```properties
 logging.config=classpath:logback-spring.xml
 logging.file.path=./src/main/resources/logs
 ```
 
-
+src/main/resources/logback-spring.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="10 seconds">
