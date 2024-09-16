@@ -515,7 +515,7 @@ src/main/resources/logback-spring.xml
     <springProfile name="dev">
         <logger name="com.miouo.fdocs.controller" level="debug"/>
     </springProfile>
-
+    <!--level = debug,info,warn,error-->
     <root level="info">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="DEBUG_FILE"/>
