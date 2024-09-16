@@ -407,7 +407,7 @@ public class XxxApplication {
 src/main/resources/application.properties
 ```properties
 logging.config=classpath:logback-spring.xml
-logging.file.path=./src/main/resources/logs
+logging.file.path=./logs/
 ```
 
 src/main/resources/logback-spring.xml
@@ -415,9 +415,9 @@ src/main/resources/logback-spring.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="10 seconds">
     <contextName>MyContextName</contextName>
-    <property name="LOG_HOME" value="./src/main/resources/logs/"/>
+    <property name="LOG_HOME" value="./logs/"/>
     <springProperty name="serverName" source="logging.file.name" defaultValue="MyServerName"/>
-    <springProperty name="logging.path" source="logging.file.path" defaultValue="./src/main/resources/logs/"/>
+    <springProperty name="logging.path" source="logging.file.path" defaultValue="./logs/"/>
 
     <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
     <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
